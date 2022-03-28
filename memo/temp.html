@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="a word card site 一个用来打印单词卡片的网站">
+    <meta name="author" content="Gaoshan">
+
+    <title> {% block title %}word_card_temp{% end %}</title>
+    <!-- Bootstrap core CSS -->
+<link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      .alert {
+  margin-bottom: 1px;
+  height: 30px;
+  line-height:30px;
+  padding:0px 15px;
+}
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    
+<header class="fixed-top">
+  <div class="collapse bg-dark " id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">About</h4>
+          <p class="text-muted">最近在给女儿启蒙英语。</p>
+           <p class="text-muted"> 因为丑丑强烈反对让女儿接触各种电子产品。</p>
+          <p class="text-muted">所以写了一个制作单词卡片的软件。</p>
+            <p class="text-muted"> 感觉效果还不错。</p>
+            <p class="text-muted"> 搬到网上来和大家分享。</p>
+           <p class="text-muted">wordcard 单词 卡片 打印 </p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Links</h4>
+          <ul class="list-unstyled">
+            <li><a href="https://pixabay.com/" style="margin:3px 15px 5px 0;font-size:12px;line-height:1.7;color:#fff;display:block;padding:9px 12px 6px>
+<i style="display:block;width:68px;height:18px;overflow:hidden"><img src="static/pixbay/logo.svg" style="width:94px"></i> 所有图片内容来自pixabay
+</a></li>
+            <li><a href="/memo#todo" class="text-white">TO DO LIST</a></li>
+            <li><a href="/memo#usage" class="text-white">说明</a></li>
+            <li><a href="mailto:364545506@qq.com" class="text-white">Email me</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="/" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24">
+        <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+  <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+        </svg>
+        <strong>WORD CARD</strong>
+        <font  size="1">    &nbsp;&nbsp;         Alpha 0.5</font>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+  {% block search %}
+  {% end %}
+</header>
+
+
+{% block main %}
+<main>
+
+  <section class="py-5 text-center container ">
+<form action="/" method="post" accept-charset="utf-8">
+<div class="row g-5 align-items-center">
+
+  <div class="col-4">
+  </div>
+  <div class="col-4">
+    <div class="input-group">
+    <span class="input-group-text" id="basic-addon1">WORD</span>
+    <input type="text" name="u_word" class="form-control" placeholder="Input your word" aria-label="Username" aria-describedby="basic-addon1">
+    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+    </div>
+  </div>
+<div class="col-4">
+
+</div>
+</div>
+
+</form>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+            <div class="card-body">
+
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</main>
+{% end %}
+
+<footer class="py-5">
+  <div class="container">
+    <div class="row">
+    <div class="col-6">
+
+    <script type="text/javascript" src="https://js.users.51.la/21249539.js"></script>
+    </div>
+    <div class="col-6">
+    <p class="float-end mb-1">
+      <a href="#">Back to top</a>
+    </p>
+    </div>
+  </div>
+    <div class="row" >
+      <div class="col-md-2"></div>
+      <div class="col-md-4">
+      <a target="_blank" style="color:gray;font-size:xx-small;" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=21010402000421"><img src="./static/REGISTRATION.png" style="float:left;"/>辽公网安备 21010402000421号</a>
+      </div>
+      <div class="col-md-4">
+      <a target="_blank" style="color:gray;font-size:xx-small;" href="https://beian.miit.gov.cn">辽ICP备2021012979号</a>
+      </div>
+      <div class="col-md-2"></div>
+  </div>
+  </div>
+
+</footer>
+
+
+    <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>
